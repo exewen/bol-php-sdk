@@ -19,7 +19,8 @@ class ConfigRegister
             ],
 
             'bol' => [
-                'channel_api' => BolEnum::CHANNEL_API,
+                'channel_auth' => BolEnum::CHANNEL_AUTH,
+                'channel_api'  => BolEnum::CHANNEL_API,
             ],
 
             'http' => [

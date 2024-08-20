@@ -24,7 +24,7 @@ class AuthService
             'grant_type' => 'client_credentials'
         ];
         $header = [
-            'Authorization' => base64_encode("$clientId:$clientSecret"),
+            'Authorization' => "Basic " . base64_encode("$clientId:$clientSecret"),
         ];
         return $this->httpClient->post($this->driver, $this->tokenUrl, $params, $header);
     }

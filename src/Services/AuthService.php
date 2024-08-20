@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Exewen\Bol\Services;
 
 use Exewen\Config\Contract\ConfigInterface;
+use Exewen\Http\Constants\HttpEnum;
 use Exewen\Http\Contract\HttpClientInterface;
 
 class AuthService
@@ -26,7 +27,7 @@ class AuthService
         $header = [
             'Authorization' => "Basic " . base64_encode("$clientId:$clientSecret"),
         ];
-        return $this->httpClient->post($this->driver, $this->tokenUrl, $params, $header);
+        return $this->httpClient->post($this->driver, $this->tokenUrl, $params, $header, [], HttpEnum::TYPE_FORM);
     }
 
 

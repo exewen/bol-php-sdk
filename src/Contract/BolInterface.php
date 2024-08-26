@@ -11,4 +11,8 @@ interface BolInterface
 
     public function getOrderDetail(string $orderId, array $params = [], array $header = []);
 
+    public function setShipments(array $params = [], array $header = []);
+
+    public function getShipmentsStatus(string $id, array $header = []);
+
 }

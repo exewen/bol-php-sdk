@@ -12,7 +12,9 @@ use Exewen\Bol\Contract\BolInterface;
  * @method static void setAccessToken(string $accessToken)
  * @method static array getToken(string $clientId, string $clientSecret)
  * @method static array getOrders(array $params, array $header = [])
- * @method static array getOrderDetail(string $orderId, array $params=[], array $header = [])
+ * @method static array getOrderDetail(string $orderId, array $params = [], array $header = [])
+ * @method static array setShipments(array $params = [], array $header = [])
+ * @method static array getShipmentsStatus(string $id, array $header = [])
  */
 class BolFacade extends Facade
 {

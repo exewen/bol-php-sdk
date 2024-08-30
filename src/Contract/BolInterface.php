@@ -13,6 +13,6 @@ interface BolInterface
 
     public function setShipments(array $params = [], array $header = []);
 
-    public function getShipmentsStatus(string $id, array $header = []);
+    public function getShipmentsStatus($id, array $header = []);
 
 }

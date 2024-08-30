@@ -64,7 +64,7 @@ class Bol implements BolInterface
         return json_decode($this->shippingsService->setShipments($params, $header), true);
     }
 
-    public function getShipmentsStatus(string $id, array $header = [])
+    public function getShipmentsStatus($id, array $header = [])
     {
         return json_decode($this->shippingsService->getShipmentsStatus($id, $header), true);
     }

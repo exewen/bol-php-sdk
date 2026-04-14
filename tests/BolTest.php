@@ -77,4 +77,12 @@ class BolTest extends Base
         $this->assertNotEmpty($response);
     }
 
+    public function testCatalogProduct()
+    {
+        BolFacade::setAccessToken(getenv('BOL_ACCESS_TOKEN'));
+        $ean = '8712345678901'; // 替换为实际的EAN码
+        $response = BolFacade::getCatalogProduct($ean);
+        $this->assertNotEmpty($response);
+    }
+
 }

@@ -11,6 +11,7 @@ use Exewen\Bol\Services\AuthService;
 use Exewen\Bol\Services\OrdersService;
 use Exewen\Bol\Services\ShippingsService;
 use Exewen\Bol\Services\OffersService;
+use Exewen\Bol\Services\ProductsService;
 use Exewen\Config\Contract\ConfigInterface;
 
 class Bol implements BolInterface
@@ -25,12 +26,15 @@ class Bol implements BolInterface
 
     private $offersService;
 
+    private $productsService;
+
     public function __construct(
         ConfigInterface      $config,
         AuthService          $authService,
         OrdersService        $ordersService,
         ShippingsService     $shippingsService,
-        OffersService        $offersService
+        OffersService        $offersService,
+        ProductsService      $productsService
     )
     {
         $this->config           = $config;
@@ -38,6 +42,7 @@ class Bol implements BolInterface
         $this->ordersService    = $ordersService;
         $this->shippingsService = $shippingsService;
         $this->offersService    = $offersService;
+        $this->productsService  = $productsService;
     }
 
     public function setAccessToken(string $accessToken, string $channel = BolEnum::CHANNEL_API)
@@ -87,6 +92,11 @@ class Bol implements BolInterface
     public function updateOffer(string $offerId, array $data, array $header = [])
     {
         return json_decode($this->offersService->updateOffer($offerId, $data, $header), true);
+    }
+
+    public function getCatalogProduct(string $ean, array $header = [])
+    {
+        return json_decode($this->productsService->getCatalogProduct($ean, $header), true);
     }
 
 }

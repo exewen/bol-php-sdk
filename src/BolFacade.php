@@ -18,6 +18,7 @@ use Exewen\Bol\Contract\BolInterface;
  * @method static array getOffers(array $params, array $header = [])
  * @method static array createOffer(array $data, array $header = [])
  * @method static array updateOffer(string $offerId, array $data, array $header = [])
+ * @method static array getCatalogProduct(string $ean, array $header = [])
  */
 class BolFacade extends Facade
 {

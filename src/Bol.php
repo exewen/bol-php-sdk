@@ -99,4 +99,9 @@ class Bol implements BolInterface
         return json_decode($this->productsService->getCatalogProduct($ean, $header), true);
     }
 
+    public function getProductPlacement(string $ean, array $header = [])
+    {
+        return json_decode($this->productsService->getProductPlacement($ean, $header), true);
+    }
+
 }

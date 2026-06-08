@@ -22,4 +22,6 @@ interface BolInterface
     public function updateOffer(string $offerId, array $data, array $header = []);
 
     public function getCatalogProduct(string $ean, array $header = []);
+
+    public function getProductPlacement(string $ean, array $header = []);
 }
